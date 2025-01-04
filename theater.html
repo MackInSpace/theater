@@ -13,10 +13,14 @@
         const MATINEE_DISCOUNT = 3;
 
         function buyTicket () {
-            const age = prompt('What is your age?')
+            const age = prompt('What is your age?');
+            console.log(age);
+
             let cost = getBaseTicketCost(age);
+            console.log("base cost: " + cost);
 
             const isMatinee = prompt('Are you attending a matinee show?');
+            console.log(isMatinee)
             cost = applyMatineeDiscount(cost, isMatinee);
 
             alert('Your ticket will cost: $' + cost);
@@ -30,6 +34,7 @@
         }
 
         function applyMatineeDiscount(cost, isMatinee) {
+            //console.log needs to be added here or below
             isMatinee = isMatinee.toLowerCase();
             if ((isMatinee === 'yes') || (isMatinee === 'y')) {
                 return cost - MATINEE_DISCOUNT;
